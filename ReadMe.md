@@ -5,6 +5,10 @@
 沢山のGameObject ( 5万個のSphere )を毎フレーム動かすテストです。<br />
 5パターンのやり方で、どれが一番早そうかをテスト出来ます。
 
+左上の選択画面で動的に変更が出来ます。また実行速度については deltaTimeを 左上に表示しています。
+が、Profiler上で確認するのが良いでしょう
+
+
 ## DirectTransform
 計算した結果を素直に transform.position / transform.rotationに代入していくやり方です。
 

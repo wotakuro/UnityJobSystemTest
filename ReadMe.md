@@ -9,18 +9,31 @@
 が、Profiler上で確認するのが良いでしょう
 
 
-## DirectTransform
+## 1.DirectTransform
 計算した結果を素直に transform.position / transform.rotationに代入していくやり方です。
+全てがMain Thread上で行われます。
 
-## TransformAndRotation
+## 2.TransformAndRotation
 計算した結果を素直に transform.SetPositionAndRotationで代入していくやり方です
+全てがMain Thread上で行われます。
 
-## TransformAccessorMain
-MainThreadでTransformAccessArray 越しにポジションをセットする方法です。
-→ 結局 Transform経由でセットとなり、ダメでした。
+## 3.WithJobParallelForTransform
+IJobParallelForTransformを利用して並行して、transformを動かします。
+Jobを活用した形の方法です。
+Update関数内で全てのtransform更新処理が終わる前提でやっています。
 
-## WithJobParallelForTransform
-IJobParallelForTransformを継承したstructのExecuteで素直にposition/rotationをセットする方法です。
+※Editor実行時だと、Renderingの処理が膨らんでしまいます。
+　Editorのみの負荷となり、実機では影響がありません。
 
-## WithJobParallelFor
+## 4.WithJobParallelForTransformByNextFrame
+IJobParallelForTransformを継承したstructで
+Update関数内で全てのtransform更新処理が終わる前提でやっています。
+
+※Editor実行時だと、Renderingの処理が膨らんでしまいます。
+　Editorのみの負荷となり、実機では影響がありません。
+
+## 5.WithJobParallelFor
 IJobParallelFor側でposition/rotationの計算を行い、最終結果をMainThread側でセットする方法です。
+座標計算計算部分だけをJob化して、最後の処理はMainThread側で動きます.
+
+

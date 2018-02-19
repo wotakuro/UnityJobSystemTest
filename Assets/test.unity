@@ -188,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137192189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1005,7 +1005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -40}
+  m_AnchoredPosition: {x: 10, y: -56}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1410064950
@@ -1056,9 +1056,9 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: TransformAndRotation
       m_Image: {fileID: 0}
-    - m_Text: TransformAccessorMain
-      m_Image: {fileID: 0}
     - m_Text: WithIJobParallelForTransform
+      m_Image: {fileID: 0}
+    - m_Text: WithIJobParallelForTransformByNextFrame
       m_Image: {fileID: 0}
     - m_Text: WithIJobParallelFor
       m_Image: {fileID: 0}
@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1165768596078326, guid: c92938092840f9245a2c2fbb034d7f00, type: 2}
   objectNum: 50000
+  targetFps: 30
 --- !u!1 &2103210554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1440,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2123081896
 MonoBehaviour:

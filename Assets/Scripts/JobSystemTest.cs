@@ -108,6 +108,8 @@ public class JobSystemTest : MonoBehaviour
     {
         // ターゲットのFPSを指定します
         Application.targetFrameRate = targetFps;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(Screen.width / 4, Screen.height / 4, true);
         // デフォルト挙動セット
         this.executeMethod = this.defaultMode;
         Resources.FindObjectsOfTypeAll<UnityEngine.UI.Dropdown>()[0].value = (int) this.defaultMode;

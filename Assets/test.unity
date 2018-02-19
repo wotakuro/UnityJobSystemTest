@@ -1322,8 +1322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1165768596078326, guid: c92938092840f9245a2c2fbb034d7f00, type: 2}
-  objectNum: 50000
-  targetFps: 30
+  objectNum: 15000
+  targetFps: 10
+  defaultMode: 2
+  logFileName: battery.log
 --- !u!1 &2103210554
 GameObject:
   m_ObjectHideFlags: 0

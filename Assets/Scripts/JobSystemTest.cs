@@ -36,6 +36,8 @@ public class JobSystemTest : MonoBehaviour
     public ExecuteMethod defaultMode = ExecuteMethod.WithIJobParallelForTransform;
     // ログファイル名
     public string logFileName = "battery.log";
+    // 解像度縮小モード
+    public bool isLowResolution = false;
 
     // 実行モード
     private ExecuteMethod executeMethod = ExecuteMethod.DirectTransform;
@@ -109,7 +111,10 @@ public class JobSystemTest : MonoBehaviour
         // ターゲットのFPSを指定します
         Application.targetFrameRate = targetFps;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(Screen.width / 4, Screen.height / 4, true);
+        if (isLowResolution)
+        {
+            Screen.SetResolution(Screen.width / 4, Screen.height / 4, true);
+        }
         // デフォルト挙動セット
         this.executeMethod = this.defaultMode;
         Resources.FindObjectsOfTypeAll<UnityEngine.UI.Dropdown>()[0].value = (int) this.defaultMode;

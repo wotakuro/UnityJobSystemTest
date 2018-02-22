@@ -46,6 +46,9 @@ IJobParallelFor側でposition/rotationの計算を行い、最終結果をMainTh
 
 # 設定について
 ![alt text](doc/img/Inspector.png)
+
+
+
 testシーン中にある「JobSystemTest」オブジェクトの値を弄る事で条件を色々テストすることが出来ます
 
 <pre>

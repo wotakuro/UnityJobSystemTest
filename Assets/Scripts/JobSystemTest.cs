@@ -9,6 +9,13 @@ using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine.Jobs;
 
 // job system test program
+/**
+ * IJobParallelFor や IJobParallelForTransform を継承した structを定義することで 自身のJobを定義することが出来ます。
+ * Executeメソッドをオーバーライドすることで処理の定義。Jobに渡したいパラメーターをstructのメンバーに持たせる形です。
+ * 
+ * #region ARRAY_JOB がIJobParallelForを利用した例
+ * #region IJobParallelForTransformが IJobParallelForTransformを利用した例となっています
+ */
 public class JobSystemTest : MonoBehaviour
 {
     // 目標Job数
@@ -243,7 +250,7 @@ public class JobSystemTest : MonoBehaviour
     // 座標計算のみ平行処理して行い、Transformに入れる部分だけは MainThreadにしたバージョンです
     private void UpdateWithIJobParalellFor(float tm)
     {
-        // Transformに関する並列処理のJobを作成します
+        // 座標計算を行うだけの jobを作成します
         MyParallelForUpdate myParallelJob = new MyParallelForUpdate()
         {
             // structの初期値を設定します

@@ -77,6 +77,11 @@ public class BatteryLogger {
         {
             return;
         }
+        // ログファイル名からなら何もしない
+        if (string.IsNullOrEmpty(LogFile))
+        {
+            return;
+        }
         stringBuilder.Length = 0;
         stringBuilder.Append(executeId).Append(",");
         stringBuilder.Append(executeMode).Append(",");

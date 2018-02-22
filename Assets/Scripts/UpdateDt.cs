@@ -26,8 +26,10 @@ public class UpdateDt : MonoBehaviour {
 	// Update is called once per frame
 	public void SetText (float dt , float execTime) {
         sb.Length = 0;
+        sb.Append("Time.deltaTime:");
         sb.Append( dt.ToString("0.0000") );
         sb.Append("\n");
+        sb.Append("UpdateFunction:");
         sb.Append(execTime.ToString("0.0000"));
 
         dtText.text = sb.ToString();

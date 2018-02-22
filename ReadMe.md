@@ -1,5 +1,6 @@
 # プロジェクトについて
-このプロジェクトは Unity 2018.1から導入された JobSystemのテスト用プログラムです。
+このプロジェクトは Unity 2018.1βから導入された JobSystemのテスト用プログラムです。<br />
+2018.1.0b6以降で動作を確認してください。
 
 # 内容について
 沢山のGameObject ( 5万個のSphere )を毎フレーム動かすテストです。<br />
@@ -58,6 +59,8 @@ DefaultMode : 起動直後のパターンを保存します
 </pre>
 
 # 結果
+PCのEditor上で確認しました。JobSystem化することでかなりの処理高速化が出来ます
+
 ![alt text](doc/img/BeforeJobSystem.png)
 
 ![alt text](doc/img/AfterJobSystem.png)
